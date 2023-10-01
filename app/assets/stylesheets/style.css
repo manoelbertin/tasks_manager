@@ -1,0 +1,17 @@
+.task {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.task p {
+  margin-bottom: 5px;
+}
+
+.task p strong {
+  font-weight: bold;
+}
+
+.task p.done {
+  color: green;
+}
