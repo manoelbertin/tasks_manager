@@ -4,14 +4,10 @@
 
 <div id="tasks">
   <header>
-      <h2 id="date"><%#= l Date.today %></h2>
+      <h2 id="date"><%= Date.today %></h2>
       <p id="task-count"></p>
-        <%#= @tarefas.count %> tasks
-      <div id="input">
-        <input type="text" name="task" class="form-control">
-        <button class="submit-btn">Submit</button>
-      </div>
-      <%#= render 'form', task: Task.new %>
+        Total <%= @tasks.count %> Tasks Bellow:
+      <%= render 'form', task: Task.new %>
   </header>
   <% @tasks.each do |task| %>
     <%= render task %>
