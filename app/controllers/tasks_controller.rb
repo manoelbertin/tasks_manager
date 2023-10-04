@@ -33,14 +33,21 @@ class TasksController < ApplicationController
   end
 
   # PATCH/PUT /tasks/1 or /tasks/1.json
-  def update
-    respond_to do |format|
-      if @task.update(task_params)
-        format.html { redirect_to task_url(@task), notice: "Task was successfully updated." }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-      end
-    end
+  # def update
+  #   respond_to do |format|
+  #     if @task.update(task_params)
+  #       format.html { redirect_to task_url(@task), notice: "Task was successfully updated." }
+  #     else
+  #       format.html { render :edit, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
+
+  def update 
+    @task.done = true
+    @task.save
+
+    redirect_to task_url
   end
 
   # DELETE /tasks/1 or /tasks/1.json
