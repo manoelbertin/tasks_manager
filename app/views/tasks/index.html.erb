@@ -4,7 +4,7 @@
 
 <div id="tasks">
   <header>
-      <h2 id="date"><%= Date.today %></h2>
+      <h2 id="date"><%= l Date.today %></h2>
       <p id="task-count"></p>
         Total <%= @tasks.count %> Tasks Bellow:
       <%= render 'form', task: Task.new %>
@@ -12,9 +12,6 @@
   <div id="list">
     <% @tasks.each do |task| %>
       <%= render task %>
-      <p>
-        <%= link_to "Show this task", task %>
-      </p>
     <% end %>
     </div>
 </div>
