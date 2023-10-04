@@ -3,7 +3,7 @@ class TasksController < ApplicationController
 
   # GET /tasks or /tasks.json
   def index
-    @tasks = Task.all
+    @tasks = Task.order(created_at: :desc)
   end
 
   # GET /tasks/1 or /tasks/1.json
@@ -44,7 +44,8 @@ class TasksController < ApplicationController
   # end
 
   def update 
-    @task.done = true
+    #@task.done = true Eu marco a tarefa e posso também desmarcar na linha abaixo
+    @task.done = !@task.done
     @task.save
 
     redirect_to task_url
